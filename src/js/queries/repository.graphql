@@ -1,0 +1,8 @@
+query REPOSITORY_QUERY ($name: String!) {
+  repository (owner: "gabsprates", name: $name) {
+    id
+    name
+    description
+  }
+}
+

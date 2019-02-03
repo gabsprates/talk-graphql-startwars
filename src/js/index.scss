@@ -1,0 +1,50 @@
+$border-color: #9e9e9e;
+
+body {
+  color: #fff;
+  background: #212121
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkwAT/GdHE/jMwMDAiC4IFQIpggjABuEq4CqhR/wEbSQcEChQUOwAAAABJRU5ErkJggg==)
+    repeat;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: monospace;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.table {
+  width: 100%;
+
+  th {
+    border-bottom: 2px dashed $border-color;
+  }
+}
+
+.menu {
+  width: 150px;
+  border-right: 2px dashed $border-color;
+
+  li {
+    padding: 10px;
+    overflow: hidden;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-bottom: 2px dashed $border-color;
+
+    &:hover {
+      color: #ff0;
+      cursor: pointer;
+    }
+  }
+}
+
+.description {
+  vertical-align: top;
+}

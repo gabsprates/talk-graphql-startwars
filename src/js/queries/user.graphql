@@ -1,0 +1,17 @@
+query USER_QUERY {
+  user (login: "gabsprates") {
+    id
+    name
+    login
+    websiteUrl
+    repositories (first: 100) {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+
