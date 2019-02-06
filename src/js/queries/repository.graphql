@@ -3,6 +3,9 @@ query REPOSITORY_QUERY ($name: String!) {
     id
     name
     description
+    stargazers {
+      totalCount
+    }
   }
 }
 

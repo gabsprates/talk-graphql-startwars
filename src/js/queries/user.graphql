@@ -4,11 +4,22 @@ query USER_QUERY {
     name
     login
     websiteUrl
+
+    starredRepositories (first: 100) {
+      nodes {
+        id
+      }
+      totalCount
+    }
+
     repositories (first: 100) {
       edges {
         node {
           id
           name
+          stargazers {
+            totalCount
+          }
         }
       }
     }

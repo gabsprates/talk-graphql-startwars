@@ -1,0 +1,7 @@
+mutation ADD_STAR_MUTATION ($input: AddStarInput!) {
+  addStar (input: $input) {
+    starrable {
+      id
+    }
+  }
+}

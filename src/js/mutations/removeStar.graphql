@@ -1,0 +1,7 @@
+mutation REMOVE_STAR_MUTATION ($input: RemoveStarInput!) {
+  removeStar (input: $input) {
+    starrable {
+      id
+    }
+  }
+}

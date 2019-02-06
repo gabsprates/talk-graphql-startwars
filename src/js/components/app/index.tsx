@@ -7,6 +7,7 @@ import Menu from "../menu";
 import { ApolloLink, Operation, NextLink, from } from "apollo-link";
 
 import { REPOSITORY_QUERY } from "../../queries/repository.graphql";
+import { RepoInfo } from "../repoInfo";
 
 type globalSettings = any;
 
@@ -71,7 +72,7 @@ export class App extends React.Component<{}, StateType> {
                       if (loading) return "loading...";
                       if (error) return "error...";
 
-                      return <pre>{JSON.stringify(data, null, 4)}</pre>;
+                      return <RepoInfo data={data.repository} />;
                     }}
                   </Query>
                 )}
