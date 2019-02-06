@@ -11,13 +11,13 @@ type MenuType = {
 
 const Menu = (props: MenuType) => (
   <ul className="menu">
-    {props.repositories.map(repo => {
-      return (
+    {props.repositories
+      .filter(repo => repo && repo.node)
+      .map(repo => (
         <li key={repo.node!.id} onClick={() => props.onClick(repo.node!.name)}>
           {repo.node!.name}
         </li>
-      );
-    })}
+      ))}
   </ul>
 );
 
@@ -27,7 +27,9 @@ export default (props: { onClick: (repo: string) => void }) => (
       if (loading) return "loading...";
       if (error) return "error...";
 
-      return <Menu {...props} repositories={data.user.repositories.edges} />;
+      return (
+        <Menu {...props} repositories={data.user.repositories.edges || []} />
+      );
     }}
   </Query>
 );
